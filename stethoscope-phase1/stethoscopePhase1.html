@@ -1,0 +1,366 @@
+<html>
+<head>
+<title></title>
+<style type="text/css" media="print">
+ .DoNotPrint {
+	 display: none;
+ }
+ .noborder {
+	 border : 0px;
+	 background: transparent;
+	 scrollbar-3dlight-color: transparent;
+	 scrollbar-3dlight-color: transparent;
+	 scrollbar-arrow-color: transparent;
+	 scrollbar-base-color: transparent;
+	 scrollbar-darkshadow-color: transparent;
+	 scrollbar-face-color: transparent;
+	 scrollbar-highlight-color: transparent;
+	 scrollbar-shadow-color: transparent;
+	 scrollbar-track-color: transparent;
+	 background: transparent;
+	 overflow: hidden;
+ }
+
+</style>
+
+<style>
+    table > tbody tr > td:first-child { width: 150px; }
+    .noborder { min-width: 500px; }
+</style>
+
+<script language="javascript">
+function formPrint(){
+			window.print();
+} 
+</script>
+
+<!-- scripts to confirm closing of window if it hadn't been saved yet -->
+<script language="javascript">
+//keypress events trigger dirty flag
+var needToConfirm = false;
+document.onkeyup=setDirtyFlag;
+function setDirtyFlag(){
+		needToConfirm = true;
+}
+function releaseDirtyFlag(){
+		needToConfirm = false; //Call this function if doesn't requires an alert.
+//this could be called when save button is clicked
+}
+window.onbeforeunload = confirmExit;
+function confirmExit(){
+	 if (needToConfirm){
+		 return "You have attempted to leave this page. If you have made any changes to the fields without clicking the Save button, your changes will be lost. Are you sure you want to exit this page?";
+	 }
+}
+</script>
+
+</head>
+
+<body onload="">
+<form method="post" action="" name="FormName" id="FormName" >
+
+<div id="page1" style="page-break-after:always;position:relative;" >
+<table style="position: relative; left: 0px; top: 30px; width:750px">
+	<tr>
+		<td> Date </td>
+		<td id="currentTime"></td>
+	</tr>
+	<tr><td><b>Vitals</b></td></tr>
+	<tr>
+		<td> Patient ID </td>
+		<td> <input name="patid" id="patid" type="text" class="noborder" oscardb="patient_id"></td>
+	</tr>
+	<tr>
+		<td> Age </td>
+		<td> <input name="age" id="age" type="text" class="noborder" oscardb="age"> </td>
+	</tr>
+	<tr>
+		<td> BP </td>
+		<td> <input name="m$BP#value" id="m$BP#value" type="text" class="noborder" oscardb="m$BP#value"> </td>
+	</tr>
+	<tr>
+		<td>Height</td>
+		<td> <input name="m$HT#value" id="m$HT#value" type="text" class="noborder" oscardb="m$HT#value"> </td>
+	</tr>
+	<tr>
+		<td> Weight </td>
+		<td> <input name="m$WT#value" id="m$WT#value" type="text" class="noborder" oscardb="m$WT#value"> </td>
+	</tr>
+	<tr>
+		<td> BMI </td>
+		<td> <input name="m$BMI#value" id="m$BMI#value" type="text" class="noborder" oscardb="m$BMI#value"> </td>
+	</tr>
+	<tr>
+		<td> Smoking Status (SKST) </td>
+		<td> <input name="m$SKST#value" id="m$SKST#value" type="text" class="noborder" oscardb="m$SKST#value"> </td>
+	</tr>
+	<tr>
+		<td> Smoking Status (SMK) </td>
+		<td> <input name="m$SMK#value" id="m$SMK#value" type="text" class="noborder" oscardb="m$SMK#value"> </td>
+	</tr>
+	<tr>
+		<td> Smoking Status (# Cigarettes per day) </td>
+		<td> <input name="m$NOSK#value" id="m$NOSK#value" type="text" class="noborder" oscardb="m$NOSK#value"> </td>
+	</tr>
+	<tr><td><b>Labs</b></td></tr>
+	<tr>
+		<td> A1C </td>
+		<td> <input name="m$A1C#value" id="m$A1C#value" type="text" class="noborder" oscardb="m$A1C#value"> </td>
+	</tr>
+	<tr>
+		<td> LDL </td>
+		<td> <input name="m$LDL#value" id="m$LDL#value" type="text" class="noborder" oscardb="m$LDL#value"> </td>
+	</tr>
+	<tr>
+		<td> HDL </td>
+		<td> <input name="m$HDL#value" id="m$HDL#value" type="text" class="noborder" oscardb="m$HDL#value"> </td>
+	</tr>
+	<tr>
+		<td> EGFR </td>
+		<td> <input name="m$EGFR#value" id="m$EGFR#value" type="text" class="noborder" oscardb="m$EGFR#value"> </td>
+	</tr>
+	<tr>
+		<td> ACR </td>
+		<td> <input name="m$ACR#value" id="m$ACR#value" type="text" class="noborder" oscardb="m$ACR#value"> </td>
+	</tr>
+	<tr>
+		<td> TG </td>
+		<td> <input name="m$TG#value" id="m$TG#value" type="text" class="noborder" oscardb="m$TG#value"> </td>
+	</tr>
+	<tr>
+		<td> TCHD </td>
+		<td> <input name="m$TCHD#value" id="m$TCHD#value" type="text" class="noborder" oscardb="m$TCHD#value"> </td>
+	</tr>
+	<tr>
+		<td> TCHL </td>
+		<td> <input name="m$TCHL#value" id="m$TCHL#value" type="text" class="noborder" oscardb="m$TCHL#value"> </td>
+	</tr>
+	<tr>
+		<td> SCR </td>
+		<td> <input name="m$SCR#value" id="m$SCR#value" type="text" class="noborder" oscardb="m$SCR#value"> </td>
+	</tr>
+</table>
+</div>
+
+<div id="page2" style="page-break-after:always;position:relative;" >
+<table style="position: relative; left: 0px; top: 30px; width:750px">
+	
+	<tr><td><b>Immunizations</b></td></tr>
+	<tr>
+		<td> Flu Immunization Date </td>
+		<td> <input name="flu_immunization_date" id="flu_immunization_date" type="text" class="noborder" oscardb="flu_immunization_date"> </td>
+	</tr>
+	<tr>
+		<td> FOBT Immunization Date </td>
+		<td> <input name="fobt_immunization_date" id="fobt_immunization_date" type="text" class="noborder" oscardb="fobt_immunization_date"> </td>
+	</tr>
+	<tr>
+		<td> Pap Immunization Date </td>
+		<td> <input name="pap_immunization_date" id="pap_immunization_date" type="text" class="noborder" oscardb="pap_immunization_date"> </td>
+	</tr>
+	<tr>
+		<td> DTap Immunization Date </td>
+		<td> <input name="dtap_immunization_date" id="dtap_immunization_date" type="text" class="noborder" oscardb="dtap_immunization_date"> </td>
+	</tr>
+	<tr><td><b>Drugs &amp; Allergies</b></td></tr>
+	<tr>
+		<td> Drug List (trade) </td>
+		<td> <textarea name="druglist_trade" id="druglist_trade" type="text" class="noborder" oscardb="druglist_trade"></textarea> </td>
+	</tr>
+	<tr>
+		<td> Drug List (generic) </td>
+		<td> <textarea name="druglist_generic" id="druglist_generic" type="text" class="noborder" oscardb="druglist_generic"></textarea> </td>
+	</tr>
+	<tr>
+		<td> Drug List (all) </td>
+		<td> <textarea name="recentrx" id="recentrx" type="text" class="noborder" oscardb="recentrx"></textarea> </td>
+	</tr>
+	<tr>
+		<td> Other Medications and Family History </td>
+		<td> <textarea name="other_medications_history" id="other_medications_history" type="text" class="noborder" oscardb="other_medications_history"></textarea> </td>
+	</tr>
+	<tr>
+		<td> Allergies </td>
+		<td> <textarea name="allergies_des" id="allergies_des" type="text" class="noborder" oscardb="allergies_des"></textarea> </td>
+	</tr>
+</table>
+</div>
+
+<div id="page3" style="page-break-after:always;position:relative;"  >
+<table style="position: relative; left: 0px; top: 30px; width:750px">
+	<tr><td><b>CPP</b></td></tr>
+	<tr>
+		<td> Ongoing Concerns </td>
+		<td> <textarea name="ongoingconcerns" id="ongoingconcerns" type="text" class="noborder" oscardb="ongoingconcerns"></textarea> </td>
+	</tr>
+	<tr>
+		<td> Social/Family History </td>
+		<td> <textarea name="social_family_history" id="social_family_history" type="text" class="noborder" oscardb="social_family_history"></textarea> </td>
+	</tr>
+	<tr>
+		<td> Medical History </td>
+		<td> <textarea name="medical_history" id="medical_history" type="text" class="noborder" oscardb="medical_history"></textarea> </td>
+	</tr>
+	<tr>
+		<td> Reminders </td>
+		<td> <textarea name="reminders" id="reminders" type="text" class="noborder" oscardb="reminders"></textarea> </td>
+	</tr>
+	<tr><td><b>History</b></td></tr>
+	<tr>
+		<td> Risk Factors </td>
+		<td> <textarea name="risk_factors_json" id="risk_factors_json" type="text" class="noborder" oscardb="risk_factors_json"></textarea> </td>
+	</tr>
+	<tr>
+		<td> Family History </td>
+		<td> <textarea name="family_history_json" id="family_history_json" type="text" class="noborder" oscardb="family_history_json"></textarea> </td>
+	</tr>
+	<tr>
+		<td> Social and Family History </td>
+		<td> <textarea name="social_family_history" id="social_family_history" type="text" class="noborder" oscardb="social_family_history"></textarea> </td>
+	</tr>
+	<tr><td><b>Billing and Dx</b></td></tr>
+	<tr>
+		<td> Dx Registry </td>
+		<td> <input name="dxregistry" id="dxregistry" type="text" class="noborder" oscardb="dxregistry"> </td>
+	</tr>
+	<tr>
+		<td> OHIP Dx Codes </td>
+		<td> <input name="OHIPdxCode" id="OHIPdxCode" type="text" class="noborder" oscardb="OHIPdxCode"> </td>
+	</tr>
+	<tr>
+		<td>Billing History</td>
+		<td id="bills" name="bills"></td>
+	</tr>
+	<tr>
+		<td>Appointment History</td>
+		<td id="appts" name="appts"></td>
+	</tr>
+</table>
+</div>
+
+ <div class="DoNotPrint" style="position: absolute; top:0px; left:0px;" id="BottomButtons" >
+	 <table><tr><td>
+		 Subject: <input name="subject" size="40" type="text"> 
+			<input value="Submit" name="SubmitButton" id="SubmitButton" type="submit" onclick=" releaseDirtyFlag();"> 
+			<input value="Reset" name="ResetButton" id="ResetButton" type="reset"> 
+			<input value="Print" name="PrintButton" id="PrintButton" type="button" onclick="formPrint();"> 
+			<input value="Print & Submit" name="PrintSubmitButton" id="PrintSubmitButton" type="button" onclick="formPrint();releaseDirtyFlag();setTimeout('SubmitButton.click()',1000);"> 
+	 </td></tr></table>
+ </div>
+ </form>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script>  
+
+function createBillingUrl(clinicUrl, patId) {  
+    return clinicUrl + 
+            "billing/CA/ON/billinghistory.jsp?demographic_no=" + patId + 
+            "&last_name=&first_name=&orderby=appointment_date&displaymode=appt_history&dboperation=appt_history&limit1=0&limit2=99"
+}
+
+function createApptUrl(clinicUrl, patId) {  
+    return clinicUrl + 
+            "demographic/demographiccontrol.jsp?demographic_no=" + patId + 
+            "&last_name=&first_name=&orderby=appttime&displaymode=appt_history&dboperation=appt_history&limit1=0&limit2=99"
+}
+
+function retrieveTable(url, tableIndex, callback) {
+	// tableIndex is 2 for billing and 0 for appointments
+    var retrievedData;
+
+    $.get(url, function(data) {
+        retrievedData = data;
+
+        var parsedData = $('<div/>').html(retrievedData)
+
+	    var table = $('table', parsedData)[tableIndex]
+	    
+	    callback(table);
+    });
+}
+
+function parseBillingCodes(codes) {
+	console.log("Parse Billing Codes");
+    var billingCodes = codes.trim().split(", ");
+    console.log("Billing Codes: " + billingCodes);
+    var parsedBills = []
+    
+    if (billingCodes[billingCodes.length-1].slice(-1) == ",") {
+        billingCodes[billingCodes.length-1] = 
+            billingCodes[billingCodes.length-1].substring(0, billingCodes[billingCodes.length-1].length - 1);
+    }
+    
+    for (var i = 0; i < billingCodes.length; i++) {
+        var bills = billingCodes[i].split(" x ");
+        for (var c = 0; c < bills[1]; c++) {
+            parsedBills.push(bills[0]);
+        }
+    }
+    
+    return parsedBills;
+}
+
+function mergeArraysToDict(keys, values) {
+    if (keys.length != values.length) {
+        console.log('Keys and Values of different lengths!');
+        return false
+    }
+
+    var newDict = {};
+    
+    for (i = 0; i < keys.length; i++) {
+        newDict[keys[i]] = values[i];
+    }
+    
+    return newDict;
+}
+
+function extractAndInsertBills(table) {
+    
+    var dates = $('tr>td:nth-of-type(2)', table).map(function() { return $(this).html().trim(); })
+    var codes = $('tr>td:nth-of-type(4)', table).map(function() { return parseBillingCodes($(this).html()); });
+    
+    var bills = mergeArraysToDict(dates, codes);
+
+    $("#bills").html(JSON.stringify(bills));
+}
+
+
+function extractAndInsertAppts(table) {
+
+	var numCols = $(table).find("th").length
+
+	// Appt table has different # of cols depending on Oscar version.
+	// When there are 6 cols it is in the 4th column, when there are 8 it is in the 6th
+	var reasonCol = (numCols == 6 ? 4 : 6);
+
+	var dates = $("tr[appt_no]>td:first-child>a", table).map(function() { return $(this).html(); });
+    var reasons = $("tr[appt_no]>td:nth-child(" + reasonCol + ")", table).map(function() { return $(this).html(); });
+    
+    var appts = mergeArraysToDict(dates, reasons);
+
+    $("#appts").html(JSON.stringify(appts));
+}
+
+$(document).ready(function() {
+
+	$("#currentTime").html(new Date())
+
+	var protocol = window.location.protocol;
+	var host = window.location.host;
+	var basepath = window.location.pathname.split("/")[1];
+	var path = protocol + "//" + host + "/" + basepath + "/";
+
+	var patId = $("#patid").val()
+
+	var billingUrl = createBillingUrl(path, patId);
+	retrieveTable(billingUrl, 2, extractAndInsertBills);
+
+	var apptUrl = createApptUrl(path, patId);
+	retrieveTable(apptUrl, 0, extractAndInsertAppts);
+});
+
+</script>
+</body>
+</html>
